@@ -81,8 +81,17 @@ local function MakeDraggable(topbarobject, object)
 	)
 end
 
+function randomString()
+	local length = math.random(10,20)
+	local array = {}
+	for i = 1, length do
+		array[i] = string.char(math.random(32, 126))
+	end
+	return table.concat(array)
+end
+
 local Discord = Instance.new("ScreenGui")
-Discord.Name = "Discord"
+Discord.Name = randomString()
 Discord.Parent = game.CoreGui
 Discord.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
